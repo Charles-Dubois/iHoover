@@ -1,13 +1,13 @@
 const prompt = require("prompt");
 prompt.start();
-var hoover = {
-  // Déclatration d'un objet contenant les infos sur le déplacement de mon hoover
+// Déclatration d'un objet contenant les infos sur le déplacement de mon hoover
+let hoover = {
   direction: "N",
   x: 5,
   y: 5,
 };
-var grid; // déclaration de la grille de jeu avec un N pour siginifer la postion initiale
-grid = [
+// déclaration de la grille de jeu avec un N pour siginifer la postion initiale
+const grid = [
   ["L", "I", "M", "I", "T", "*", "L", "I", "M", "I", "T"],
   ["I", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
   ["M", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
@@ -20,6 +20,7 @@ grid = [
   ["I", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
   ["T", " ", " ", " ", " ", " ", " ", " ", " ", " ", " "],
 ];
+
 console.table(grid); // affichage de la grille
 function turnRight(myHoover) {
   // fonction pour tourner a droite en fonction de la direction regardée
@@ -96,9 +97,9 @@ function moveForward(myHoover) {
   grid[hoover.y][hoover.x] = hoover.direction;
 }
 function pilotHoover(instructions) {
-  // fonction pour piloter le rover, elle appelle les fonctiobn déclarée plus haut
+  // fonction pour piloter le rover, elle appelle les fonction déclarées plus haut
   grid[hoover.y][hoover.x] = hoover.direction;
-  for (var i = 0; i < instructions.length; i++) {
+  for (let i = 0; i < instructions.length; i++) {
     if (instructions.charAt(i) === "G") {
       turnLeft(hoover);
     } else if (instructions.charAt(i) === "D") {
@@ -110,8 +111,7 @@ function pilotHoover(instructions) {
   console.table(grid);
   console.log("my postion ".concat(hoover.y, "y / ").concat(hoover.x, "x "));
 }
-var conditions;
-conditions = [
+const conditions = [
   //conditions définie pour la libaire prompt
   {
     name: "letters",
