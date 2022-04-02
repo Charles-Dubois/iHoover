@@ -1,8 +1,8 @@
-## IHoover Typescript.
+## iHoover Typescript.
 
 Prérequis :
 
-Node JS :https://nodejs.org/en/
+Node JS : https://nodejs.org/en/
 
 Un terminal : https://cmder.net/
 
